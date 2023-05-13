@@ -6,10 +6,11 @@ pipeline {
             steps {
                sh """
                   pwd 
-                  cd Application
+                  cd Application/api
                   pwd
              """
            }
         }
     }
 }
+
