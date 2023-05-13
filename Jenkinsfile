@@ -5,9 +5,16 @@ pipeline {
         stage('Setup') {
             steps {
                 sh """
-                python3 --version
-                pip -version
+                    cd Application/api
+                    'pip install -r requirements.txt'
+                    virtualenv venv
+                    source venv/bin/activate
                 """
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'python3 manage.py test'
             }
         }
     }
@@ -18,24 +25,24 @@ pipeline {
 
 
 
-// pipeline {
-//     agent any
+pipeline {
+    agent any
     
-//     stages {
-//         stage('Setup') {
-//             steps {
-//                 sh """
-//                     cd Application/api
-//                     virtualenv venv
-//                     source venv/bin/activate
-//                     'pip install -r requirements.txt'
-//                 """
-//             }
-//         }
-//         stage('Test') {
-//             steps {
-//                 sh 'python3 manage.py test'
-//             }
-//         }
-//     }
-// }
+    stages {
+        stage('Setup') {
+            steps {
+                sh """
+                    cd Application/api
+                    virtualenv venv
+                    source venv/bin/activate
+                    'pip install -r requirements.txt'
+                """
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'python3 manage.py test'
+            }
+        }
+    }
+}
