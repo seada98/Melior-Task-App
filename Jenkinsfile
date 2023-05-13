@@ -16,6 +16,8 @@ pipeline {
             steps {
                 sh """
                     cd Application/api
+                    virtualenv venv
+                    . venv/bin/activate
                     python3 manage.py test
                 """
             }
