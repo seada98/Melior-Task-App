@@ -4,7 +4,6 @@ metadata:
   labels:
     app: database
   name: database-deployment
-  namespace: backend
 spec:
   replicas: 1
   selector:
