@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                sh """
-                   python3 –version
-                """
+                withPythonEnv('some-python-installation') {
+    sh 'python3 –version'
+}
             }
         }
     }
