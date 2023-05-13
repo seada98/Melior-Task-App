@@ -6,15 +6,19 @@ pipeline {
             steps {
                 sh """
                     cd Application/api
+                    pwd
                     virtualenv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
+                    pwd
                 """
             }
         }
         stage('Test') {
             steps {
-                sh 'python3 manage.py test'
+                pwd
+                sh 'python3 manage.py students.test'
+                pwd
             }
         }
     }
