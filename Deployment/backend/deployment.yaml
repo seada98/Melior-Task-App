@@ -78,6 +78,9 @@ spec:
         - name: backend-logs
           hostPath:
             path: /var/log
-      dependsOn:
-        - name: database-deployment
-          condition: "Available"
+      affinity:
+        podAffinity: 
+          dependsOn:
+          - name: my-service
+            condition: "Available"
+
