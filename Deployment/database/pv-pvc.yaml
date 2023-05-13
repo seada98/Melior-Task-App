@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: database-persistent-volume
-  namespace: database
+  namespace: backend
   labels:
     type: local
 spec:
