@@ -4,12 +4,11 @@ pipeline {
      stages {
         stage('Test') {
             steps {
-             sh """
-                pwd 
-                cd Application
-                pwd
-            
-                """
+               sh """
+                  pwd 
+                  cd Application
+                  pwd
+             """
            }
         }
     }
