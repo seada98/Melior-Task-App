@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                pwd
+                sh 'pwd'
                 sh 'python3 manage.py students.test'
-                pwd
+                sh 'pwd'
             }
         }
     }
