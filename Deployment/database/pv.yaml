@@ -6,11 +6,12 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: standard
-  persistentVolumeReclaimPolicy: Retain
   capacity:
-    storage: 400Mi
+    storage: 200Mi
   accessModes:
-    - ReadWriteMany
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
   hostPath:
-    path: /data
+    path: /tmp/data
+    type: DirectoryOrCreate
