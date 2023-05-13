@@ -1,16 +1,21 @@
 pipeline {
     agent any
     
-     stages {
+    stages {
+        stage('Setup') {
+            steps {
+                sh """
+                    cd Application/api
+                    virtualenv venv
+                    source venv/bin/activate
+                    'pip install -r requirements.txt'
+                """
+            }
+        }
         stage('Test') {
             steps {
-               sh """
-                  pwd 
-                  cd Application/api
-                  pwd
-             """
-           }
+                sh 'python3 manage.py test'
+            }
         }
     }
 }
-
