@@ -15,7 +15,7 @@ spec:
         app: backend
     spec:
       containers:
-        - image: seada98/django
+        - image: seada98/django:vtag
           name: django
           ports:
             - containerPort: 8000

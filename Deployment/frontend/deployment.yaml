@@ -15,5 +15,5 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: seada98/react
+        - image: seada98/react:vtag
           name: react
