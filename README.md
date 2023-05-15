@@ -65,5 +65,6 @@ From GitHub -->
 
 ### The Web App is successfully deployed! 
 
+![](./Screenshot/services.png)
 
 
