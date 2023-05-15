@@ -67,4 +67,10 @@ From GitHub -->
 
 ![](./Screenshot/services.png)
 
+![](./Screenshot/pipeline.png)
 
+### Add something in database with django dashboard 
+
+![](./Screenshot/backend.png)
+
+![](./Screenshot/frontend.png)
