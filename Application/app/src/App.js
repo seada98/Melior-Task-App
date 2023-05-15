@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://34.170.255.164:8000/api/students/")
+      .get("http://35.193.233.25:8000/api/students/")
       .then((response) => {
         setStudents(response.data);
       })
@@ -26,7 +26,7 @@ const App = () => {
               <h2>You have no students in your database..!</h2>
               <h5>
                 You can add students using{" "}
-                <a href="http://34.170.255.164:8000/admin">Django Admin</a>.
+                <a href="http://35.193.233.25:8000/admin">Django Admin</a>.
               </h5>
             </div>
           ) : (
